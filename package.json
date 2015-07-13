@@ -1,6 +1,6 @@
 {
   "name": "swf-lambda-decider",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Amazon Lambda Decider for Simple WorkFlow (SWF)",
   "main": "index.js",
   "scripts": {
