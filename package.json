@@ -1,0 +1,24 @@
+{
+  "name": "swf-lambda-decider",
+  "version": "1.0.0",
+  "description": "Amazon Lambda Decider for Simple WorkFlow (SWF)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neyric/swf-lambda-decider.git"
+  },
+  "keywords": [
+    "aws",
+    "swf",
+    "lambda"
+  ],
+  "author": "Eric Abouaf <eric.abouaf@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neyric/swf-lambda-decider/issues"
+  },
+  "homepage": "https://github.com/neyric/swf-lambda-decider"
+}
