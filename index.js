@@ -1,5 +1,5 @@
 
-var DecisionTask = require('./lib/decision-task');
+var DecisionTask = require('./lib/DecisionTask');
 
 module.exports = function (workflowFunction) {
 
