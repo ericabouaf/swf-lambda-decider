@@ -2,7 +2,7 @@
 
 Amazon Lambda Decider for Simple WorkFlow (SWF)
 
-NOTE: under development, use at your own risks
+To launch those lambda, we recommand using: https://github.com/neyric/swf-lambda-decider-poller
 
 ## Usage
 
@@ -63,6 +63,6 @@ http://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html
 
 ## Deployment
 
-We recommand using https://github.com/ThoughtWorksStudios/node-aws-lambda to automate deployment
+We recommand using https://github.com/neyric/swf-lambda-decider-gulp-tasks to automate deployment
 
 TODO: Write a YeoMan Generator !

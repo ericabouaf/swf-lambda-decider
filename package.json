@@ -19,7 +19,7 @@
     "lambda"
   ],
   "author": "Eric Abouaf <eric.abouaf@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/neyric/swf-lambda-decider/issues"
   },
