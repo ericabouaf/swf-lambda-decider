@@ -51,3 +51,18 @@ exports.handler = require('swf-lambda-decider')(function (w) {
 
 });
 ````
+
+
+## Note about the aws-sdk dependency
+
+To send the lambda response, we need the aws-sdk version 2.1.45
+
+At the time this is being written, the version available into lambda is 2.1.35 :
+http://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html
+
+
+## Deployment
+
+We recommand using https://github.com/ThoughtWorksStudios/node-aws-lambda to automate deployment
+
+TODO: Write a YeoMan Generator !

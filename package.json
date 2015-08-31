@@ -1,10 +1,13 @@
 {
   "name": "swf-lambda-decider",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Amazon Lambda Decider for Simple WorkFlow (SWF)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1.45"
   },
   "repository": {
     "type": "git",
