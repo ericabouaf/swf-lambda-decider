@@ -1,10 +1,17 @@
 # swf-lambda-decider
 
-Amazon Lambda Decider for Simple WorkFlow (SWF)
+Amazon Lambda Decider for Amazon Simple WorkFlow (SWF)
 
-To launch those lambda, we recommand using: https://github.com/neyric/swf-lambda-decider-poller
+## Intro
+
+This library tries its best to make it easy to write SWF deciders in Javascript, and host them on Amazon Lambda.
+
+Important: this library does not poll SWF for decision task. To launch decider-lambdas, we recommand using the [swf-lambda-decider-poller project](https://github.com/neyric/swf-lambda-decider-poller).
+
 
 ## Usage
+
+New: To simplify the developpement of lambda-deciders, please check out the [swf-lambda-decider YeoMan generator](https://github.com/neyric/generator-swf-lambda-decider)
 
  * Create a new npm package for your workflow decider :
 ````sh
@@ -55,7 +62,7 @@ exports.handler = require('swf-lambda-decider')(function (w) {
 
 ## Note about the aws-sdk dependency
 
-To send the lambda response, we need the aws-sdk version 2.1.45
+To send the lambda response, we need the aws-sdk version >=2.1.45
 
 At the time this is being written, the version available into lambda is 2.1.35 :
 http://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html
@@ -63,6 +70,51 @@ http://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html
 
 ## Deployment
 
-We recommand using https://github.com/neyric/swf-lambda-decider-gulp-tasks to automate deployment
+We recommand using https://github.com/neyric/swf-lambda-decider-gulp-tasks to automate deployment.
 
-TODO: Write a YeoMan Generator !
+(Which is made automatically available if you use [swf-lambda-decider YeoMan generator](https://github.com/neyric/generator-swf-lambda-decider))
+
+
+## API
+
+
+### Simple Activity
+
+```js
+w.activity({
+  name: 'step1', // Must be unique
+  activity: 'sleep'
+})(function(err, results) {
+  // ...
+});
+```
+
+To specify a custom taskList :
+
+```js
+w.activity({
+  name: 'step2', // Must be unique
+  activity: 'echo',
+  taskList: 'my-custom-tasklist'
+})(function(err, results) {
+  // ...
+});
+```
+
+
+### Calling a lambda function
+
+```js
+w.lambda({
+  "id": "step_0", // Must be unique
+  "name": "yql", // Name of the lambda function
+  "input": {
+    "yqlquery": "SELECT * FROM slideshare.slideshows WHERE user='neyric'",
+    "diagnostics": "true",
+    "envURL": "http://datatables.org/alltables.env"
+  },
+  "startToCloseTimeout": "30"
+})(function (err, results) {
+  // ...
+});
+```
